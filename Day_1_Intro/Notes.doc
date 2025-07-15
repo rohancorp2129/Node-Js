@@ -1,0 +1,102 @@
+Node js : It executes js code outside the browser  , On serversite 
+    Run time environment 
+
+    JS lib-backend Dev
+    Runtime env.-Used to run JS outside the browser i.e server side scripting
+    Run on chrome v8 engine
+    Programming languages: JavaScript, Python, C, C++, CoffeeScript
+    Developer: Ryan Dahl, OpenJS Foundation, Bryan Cantrill
+    Initial release: May 27, 2009; 15 years ago
+    License: MIT License
+
+# How Applications works 
+
+Layers of application :
+    Front end layer / Client side 
+    Backend Layer / Server side  : work API creation and Database communication , 
+    Database Layer 
+
+#Features-
+    Is Async driven JS runtime env. (Non Blocking Operations) : we are writing only callback funtions here 
+    cross platform
+    Open source JS library
+    Single Thereded : At a time eak kam karna 
+    
+# API Development
+    API is one of the most important for backend Development
+    i.e data flow send/recieve
+    80% works-data travesing 
+    Mostly we are create API using Node js , 
+
+# Real time features
+Node.js is commonly used to develop real-time applications, also known as RTAs. 
+    Its asynchronous, event-driven mature, allows it to handle heavy input-output operations,
+     which makes it much easier for Node.js developers to achieve 
+     the level of performance users have come to expect from modern real-time applications
+
+    SPA- data updating without reloading browser / page
+    APPS- NASA, netflix, walmart, twitter
+
+    Real time apps google meet-continue communication-live stream app-
+        Web socket-
+            continue data flow-req, res
+            fast commu- continue connection
+
+Difference bet API and Socket : ? 
+
+
+
+Data streaming-smoothing
+    netflix, amazon
+    audio/video streaming
+    data pipelining i.e transfer small small data
+Mircoservices architecture-
+    Every module has their own service
+    Micro-service and server less application
+    Like AMazon, whatsapp-insta-
+    Divide our app into parts and place each ms in team and develope every section as per need 
+        without affecting other section i.e lightweight easy integration with server less acrchitecture
+
+Easy dovelopment : 
+
+    i.e build flexible apps 
+
+REST API- protocol having rules and regulation 
+    to build API rest architecture
+    chunk data
+
+Key benefits of Node.js 
+
+    # Single-threaded: With event looping, the server uses a non-blocking mechanism to respond.
+    # Super-fast: Codes are executed quickly on the V8 JavaScript Engine
+    #Event-driven: 'Events of Node.js' is a notification system that enables the application server to capture the response of the previous API call.
+    #Buffer-less: There is no buffering as data is simply released in chunks.
+    #Asynchronous: The non-blocking, non-synchronous Node.js libraries move to the next API and do not await the return data of the previous API.
+    # Highly-scalable: Servers can handle as many requests as coming their way\
+    #Licensed: The program is authorized under a software license.
+    #Microsoft, PayPal, Uber, eBay, and Yammer are leading companies actively using Node.js application development for their projects.
+
+Callback Function :
+
+    passing one funciton to another function as a argument 
+    i.e exetute one function into another function , 
+    one fun execute after another fun finish their execution 
+e.g.
+    
+
+functionn A(){
+    console.log("Helllo A")
+}
+
+functionn B(Callback){
+    Callback()
+    console.log("Helllo B")
+}
+
+B(A)
+
+
+
+
+     Node js by default execute Async 
+     non- blocking operation 

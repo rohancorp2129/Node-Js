@@ -1,0 +1,43 @@
+Day_2 : 
+
+port and protocols :
+
+http : 80
+https : 443
+tcp 
+udp 
+
+total port numbers : 65,536
+Port numbers are used to identify specific services or applications running on a computer
+
+local : 127.0.0.1:3000
+server : localhost 
+
+
+How to create our own node server : 
+    const http=require('http'); 
+
+    const app =http.createServer((req , res )=>{
+
+        res.write("Welcome to node js server") // used to write response, data stored must be string , 
+
+        res.end() // must to end response 
+    })
+
+
+    // Must we need to pass port to listen incomming request 
+    app.listen(3000 ,()=>{
+
+        console.log("Server is running on 3000 port ")
+    })
+
+
+to run : on terminal node filename 
+on browser hostname i.e http://localhost:3000/
+
+
+Imp :    If we are updating server file , then we have to restart our server 
+
+server side is secured : we cant see logic 
+
+client side we can see code 

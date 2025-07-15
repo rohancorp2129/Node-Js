@@ -1,0 +1,127 @@
+Day 3 :
+callback fun : 
+Higher order function : (one fun return another fun ) or execute one fun inside another fun , like callback just here we return another fun 
+ex , 
+
+function A(x){
+    return function B(y){
+        console.log(x*y)
+    }
+}
+
+A(5)(5) // 25
+
+
+
+// moddleware : so our node can understand , difference bet what is htmp code and what is string ( text)
+
+    //  How to write html 
+    const statusCode=200; 
+    res.writeHead(statusCode,{'content-type':'text/html'})
+
+// we no need to restart after each saved , so we have " nodemon package "
+" nodemon package " : its like live server 
+
+installition :  npm i -g nodemon 
+and from now , instead of node filename we have to write nodemon filename  
+
+What is module : each and every javascript code file is module , 
+                and need to import /export for resuability 
+
+
+built in module : 
+user define module : 
+
+
+// react export 
+// export default App 
+
+// react import 
+// import module-name from ' module'
+
+// in node : 
+// export 
+// module.exports={Addition}
+
+// import http=require('http)
+
+
+url decoding : 
+
+we have built in package for url decoding : 
+
+
+// url decoding : 
+// https : network protocol 
+// www.google.com : domain - behind the process assign IP 
+//     DNS : convert IP into human readable name 
+
+// ?q ..... : query : your query / user entered entered keywords 
+// & : dynamic variable 
+
+// https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A&q=metafolks+technologies&rlz=1C1VDKB_enIN1163IN1163&oq=meta&gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&
+
+
+// https:
+//www.google.com/
+// search
+// ?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A
+// &q=metafolks+technologies
+// &rlz=1C1VDKB_enIN1163IN1163
+// &oq=meta
+// &gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&
+
+
+ex . 
+
+//url package 
+// use to fetch data from url 
+var url=require('url') 
+
+before end :
+
+var url_link='https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A&q=metafolks+technologies&rlz=1C1VDKB_enIN1163IN1163&oq=meta&gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&'
+    var result=url.parse(url_link,true)
+    console.log(result)
+
+
+: summary of day 3 
+
+#Middleware
+    Used to handle data between req and res i.e intercept between req and res
+    Intercept between req and res
+    Bridge between req and res
+ex : 
+
+var urldata-url.parse(url_link, true)
+
+
+Url {
+    protocol: null,
+    slashes: null,
+    auth: null,
+    host: null,
+    port: null,
+    hostname: null,
+    hash: null,
+    search: null,
+    query: [Object: null prototype] {},
+    pathname: '/favicon.ico",
+    path: '/favicon.ice',
+    href: '/favicon.ico'
+}
+
+#module-
+Each JS File is module
+Separate JS File
+Each module we need to export for Reusability purpose
+Reusability
+
+3 Types of Module
+
+#Built in Module- http and url
+#User Defined Module
+#3rd Party Module
+
+
+Difference between node js and Express 

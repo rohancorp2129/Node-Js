@@ -1,0 +1,334 @@
+Node js : It executes js code outside the browser  , On serversite 
+    Run time environment 
+
+    JS lib-backend Dev
+    Runtime env.-Used to run JS outside the browser i.e server side scripting
+    Run on chrome v8 engine
+    Programming languages: JavaScript, Python, C, C++, CoffeeScript
+    Developer: Ryan Dahl, OpenJS Foundation, Bryan Cantrill
+    Initial release: May 27, 2009; 15 years ago
+    License: MIT License
+
+# How Applications works 
+
+Layers of application :
+    Front end layer / Client side 
+    Backend Layer / Server side  : work API creation and Database communication , 
+    Database Layer 
+
+#Features-
+    Is Async driven JS runtime env. (Non Blocking Operations) : we are writing only callback funtions here 
+    cross platform
+    Open source JS library
+    Single Thereded : At a time eak kam karna 
+    
+# API Development
+    API is one of the most important for backend Development
+    i.e data flow send/recieve
+    80% works-data travesing 
+    Mostly we are create API using Node js , 
+
+# Real time features
+Node.js is commonly used to develop real-time applications, also known as RTAs. 
+    Its asynchronous, event-driven mature, allows it to handle heavy input-output operations,
+     which makes it much easier for Node.js developers to achieve 
+     the level of performance users have come to expect from modern real-time applications
+
+    SPA- data updating without reloading browser / page
+    APPS- NASA, netflix, walmart, twitter
+
+    Real time apps google meet-continue communication-live stream app-
+        Web socket-
+            continue data flow-req, res
+            fast commu- continue connection
+
+Difference bet API and Socket : ? 
+
+
+
+Data streaming-smoothing
+    netflix, amazon
+    audio/video streaming
+    data pipelining i.e transfer small small data
+Mircoservices architecture-
+    Every module has their own service
+    Micro-service and server less application
+    Like AMazon, whatsapp-insta-
+    Divide our app into parts and place each ms in team and develope every section as per need 
+        without affecting other section i.e lightweight easy integration with server less acrchitecture
+
+Easy dovelopment : 
+
+    i.e build flexible apps 
+
+REST API- protocol having rules and regulation 
+    to build API rest architecture
+    chunk data
+
+Key benefits of Node.js 
+
+    # Single-threaded: With event looping, the server uses a non-blocking mechanism to respond.
+    # Super-fast: Codes are executed quickly on the V8 JavaScript Engine
+    #Event-driven: 'Events of Node.js' is a notification system that enables the application server to capture the response of the previous API call.
+    #Buffer-less: There is no buffering as data is simply released in chunks.
+    #Asynchronous: The non-blocking, non-synchronous Node.js libraries move to the next API and do not await the return data of the previous API.
+    # Highly-scalable: Servers can handle as many requests as coming their way\
+    #Licensed: The program is authorized under a software license.
+    #Microsoft, PayPal, Uber, eBay, and Yammer are leading companies actively using Node.js application development for their projects.
+
+Callback Function :
+
+    passing one funciton to another function as a argument 
+    i.e exetute one function into another function , 
+    one fun execute after another fun finish their execution 
+e.g.
+    
+
+functionn A(){
+    console.log("Helllo A")
+}
+
+functionn B(Callback){
+    Callback()
+    console.log("Helllo B")
+}
+
+B(A)
+
+
+
+
+     Node js by default execute Async 
+     non- blocking operation 
+
+
+
+*****************************************************************************************************************************
+Day_2 : 
+
+port and protocols :
+
+http : 80
+https : 443
+tcp 
+udp 
+
+total port numbers : 65,536
+Port numbers are used to identify specific services or applications running on a computer
+
+local : 127.0.0.1:3000
+server : localhost 
+
+
+How to create our own node server : 
+    const http=require('http'); 
+
+    const app =http.createServer((req , res )=>{
+
+        res.write("Welcome to node js server") // used to write response, data stored must be string , 
+
+        res.end() // must to end response 
+    })
+
+
+    // Must we need to pass port to listen incomming request 
+    app.listen(3000 ,()=>{
+
+        console.log("Server is running on 3000 port ")
+    })
+
+
+to run : on terminal node filename 
+on browser hostname i.e http://localhost:3000/
+
+
+Imp :    If we are updating server file , then we have to restart our server 
+
+server side is secured : we cant see logic 
+
+client side we can see code 
+
+***************************************************************************************************************************************
+
+Day 3 :
+callback fun : 
+Higher order function : (one fun return another fun ) or execute one fun inside another fun , like callback just here we return another fun 
+ex , 
+
+function A(x){
+    return function B(y){
+        console.log(x*y)
+    }
+}
+
+A(5)(5) // 25
+
+
+
+// moddleware : so our node can understand , difference bet what is htmp code and what is string ( text)
+
+    //  How to write html 
+    const statusCode=200; 
+    res.writeHead(statusCode,{'content-type':'text/html'})
+
+// we no need to restart after each saved , so we have " nodemon package "
+" nodemon package " : its like live server 
+
+installition :  npm i -g nodemon 
+and from now , instead of node filename we have to write nodemon filename  
+
+What is module : each and every javascript code file is module , 
+                and need to import /export for resuability 
+
+
+built in module : 
+user define module : 
+
+
+// react export 
+// export default App 
+
+// react import 
+// import module-name from ' module'
+
+// in node : 
+// export 
+// module.exports={Addition}
+
+// import http=require('http)
+
+
+url decoding : 
+
+we have built in package for url decoding : 
+
+
+// url decoding : 
+// https : network protocol 
+// www.google.com : domain - behind the process assign IP 
+//     DNS : convert IP into human readable name 
+
+// ?q ..... : query : your query / user entered entered keywords 
+// & : dynamic variable 
+
+// https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A&q=metafolks+technologies&rlz=1C1VDKB_enIN1163IN1163&oq=meta&gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&
+
+
+// https:
+//www.google.com/
+// search
+// ?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A
+// &q=metafolks+technologies
+// &rlz=1C1VDKB_enIN1163IN1163
+// &oq=meta
+// &gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&
+
+
+ex . 
+
+//url package 
+// use to fetch data from url 
+var url=require('url') 
+
+before end :
+
+var url_link='https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zErLKzepyjEyYLRSNagwTkpOsjRNTDRLS001trS0tDKoSDQ2sDBNtDRJNDVIs0y1SPUSy00tSUzLz8kuVihJTc7Iy8_JT89MLQYAli0Y2A&q=metafolks+technologies&rlz=1C1VDKB_enIN1163IN1163&oq=meta&gs_lcrp=EgZjaHJvbWUqEwgGEC4YrwEYxwEYkQIYgAQYigUyBggAEEUYOTIYCAEQLhhDGIMBGMcBGLEDGNEDGIAEGIoFMg8IAhAAGEMYsQMYgAQYigUyDAgDEAAYQxiABBiKBTITCAQQLhivARjHARiRAhiABBiKBTIMCAUQABhDGIAEGIoFMhMIBhAuGK8BGMcBGJECGIAEGIoFMgwIBxAAGEMYgAQYigUyCggIEAAYsQMYgATSAQkxNjY2MGowajeoAgCwAgA&sourceid=chrome&'
+    var result=url.parse(url_link,true)
+    console.log(result)
+
+
+: summary of day 3 
+
+#Middleware
+    Used to handle data between req and res i.e intercept between req and res
+    Intercept between req and res
+    Bridge between req and res
+ex : 
+
+var urldata-url.parse(url_link, true)
+
+
+Url {
+    protocol: null,
+    slashes: null,
+    auth: null,
+    host: null,
+    port: null,
+    hostname: null,
+    hash: null,
+    search: null,
+    query: [Object: null prototype] {},
+    pathname: '/favicon.ico",
+    path: '/favicon.ice',
+    href: '/favicon.ico'
+}
+
+#module-
+Each JS File is module
+Separate JS File
+Each module we need to export for Reusability purpose
+Reusability
+
+3 Types of Module
+
+#Built in Module- http and url
+#User Defined Module
+#3rd Party Module
+
+*************************************************************************************************************************
+Day_4 : 
+
+routing data using node : using url 
+
+
+
+# Express : 
+
+    Nodejs framework 
+    more functionality 
+
+    fast and efficient development 
+    reduce code 
+    most widely used in industry 
+
+
+    complete MVC : model - logical part 
+                   View : view (react)
+                   Controller : connection bet model and view 
+
+    
+
+Difference between node js and Express 
+
+Nodejs
+    1-Build server side app event driven apps, input/op
+    2. low feature
+    3. built on google chrome v8 engine
+    4. written in C,C++, JS
+    5. Runtime env for server side execution
+    6. No controllers provided
+    7. Routing not proided
+    8. No middleware provided
+    9. More coding / development time
+# Express JS
+
+    1. used to build web app using principle and apprach if Nodejs
+    2. More Features
+    3. Built on Nodejs
+    4. Written in JS
+    5. Framework
+    6. Routing is Provided
+    7. Middleware is also provided , 
+    8. Faster development
+    9. less code write
+to easy using built in pkg : 
+
+File Uploading
+Routing
+Form handling
+
+
+// how to create Express js application 
+
+
+
